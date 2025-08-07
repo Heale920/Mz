@@ -2,12 +2,8 @@ import axios from 'axios'
 import { ElMessage } from 'element-plus'
 // import { useUserStore } from '@/stores/user'
 
-// 新增：使用环境变量来定义 API 的基础 URL
-const apiBaseUrl = process.env.VUE_APP_API_URL;
-
 const api = axios.create({
-  // 将硬编码的本地地址替换为环境变量
-  baseURL: apiBaseUrl,
+  baseURL: 'http://localhost:8081',
   timeout: 10000,
 })
 
