@@ -1,0 +1,45 @@
+server:
+  port: 8081
+
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog-platform?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password: jxy030409.
+
+  jackson:
+    time-zone: Asia/Shanghai
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+    web:
+      resources:
+        static-locations:
+          - classpath:/META-INF/resources/
+          - classpath:/resources/
+          - classpath:/static/
+          - classpath:/public/
+
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 5MB
+
+  # 启用AOP配置
+  aop:
+    auto: true
+    proxy-target-class: true
+
+file:
+
+  upload-dir: ./uploads/avatar  # 相对路径（相对于应用启动目录）
+#mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#    map-underscore-to-camel-case: true
+#  type-aliases-package: org.example.blogplarform.model
+#  mapper-locations: classpath:mapper/*.xml
+
