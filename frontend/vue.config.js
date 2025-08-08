@@ -15,7 +15,7 @@ module.exports = defineConfig({
     }
   },
   transpileDependencies: true,
-  publicPath: '/',
+  publicPath: './',
   configureWebpack: {
     plugins: [
       new DefinePlugin({
